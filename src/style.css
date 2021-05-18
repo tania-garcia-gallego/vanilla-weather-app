@@ -4,3 +4,16 @@ form {
 h1 {
   margin-left: 20px;
 }
+
+li {
+  list-style: none;
+  color: grey;
+}
+
+.nextDays li {
+  display: inline;
+  text-align: center;
+  margin: auto;
+  border-width: 1px;
+  text-align: center;
+}
