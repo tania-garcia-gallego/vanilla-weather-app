@@ -13,7 +13,11 @@ li {
 .nextDays li {
   display: inline;
   text-align: center;
+  padding: 10px;
   margin: auto;
   border-width: 1px;
-  text-align: center;
+  border-color: grey;
+}
+.card {
+  color: blue;
 }
