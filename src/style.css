@@ -2,22 +2,22 @@ form {
   margin-right: 0;
 }
 h1 {
-  margin-left: 20px;
+  margin: 30px;
 }
 
 li {
   list-style: none;
   color: grey;
 }
-
+body {
+  margin: 20px;
+  padding: 10px;
+}
+ul {
+  margin: 20px;
+}
 .nextDays li {
   display: inline;
-  text-align: center;
-  padding: 10px;
+  padding: 20px;
   margin: auto;
-  border-width: 1px;
-  border-color: grey;
-}
-.card {
-  color: blue;
 }
