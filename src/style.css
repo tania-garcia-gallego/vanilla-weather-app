@@ -27,3 +27,10 @@ input {
   margin: auto;
   background-color: #ffefc4;
 }
+
+.coded-by {
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  margin-top: 30px;
+  font-size: x-small;
+}
