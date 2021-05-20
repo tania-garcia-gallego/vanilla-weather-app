@@ -2,7 +2,7 @@
 function getTemperature(response){
     let temp = Math.round(response.data.main.temp);
     let currentTemp = document.querySelector("#temp");
-    currentTemp.innerHTML = `${temp} °C`;
+    currentTemp.innerHTML = `${temp}°C`;
     let cityName = response.data.name;
     let h1 = document.querySelector("h1");
     h1.innerHTML = cityName;
@@ -18,6 +18,12 @@ function getTemperature(response){
     let minTemp = Math.round(response.data.main.temp_min);
     let todayMinTemp = document.querySelector("#tempMin");
     todayMinTemp.innerHTML = `Min Temp: ${minTemp}°C`;
+    let weatherIcon = response.data.weather[0].icon;
+    let icon = document.querySelector("#icon");
+    icon.setAttribute("src" , `http://openweathermap.org/img/wn/${weatherIcon}@2x.png `); 
+    let weatherDescription = response.data.weather[0].description;
+    let currentWeatherDescription = document.querySelector("#weatherDescription");
+    currentWeatherDescription.innerHTML =  `It's a ${weatherDescription} day!`;
 }
 
 function getCity(response){
