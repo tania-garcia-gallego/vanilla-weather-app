@@ -16,6 +16,11 @@ body {
 ul {
   margin: 20px;
 }
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+}
 .nextDays li {
   display: inline;
   padding: 20px;
