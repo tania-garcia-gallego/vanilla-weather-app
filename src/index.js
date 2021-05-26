@@ -1,4 +1,12 @@
 
+function getCoordForecast(coordinates){
+    console.log(coordinates);
+    let apiKey="751305c75f9526727cdf4f36e45a4e75";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
+}
+
 function getTemperature(response){
     let temp = Math.round(response.data.main.temp);
     let currentTemp = document.querySelector("#temp");
@@ -24,9 +32,12 @@ function getTemperature(response){
     let weatherDescription = response.data.weather[0].description;
     let currentWeatherDescription = document.querySelector("#weatherDescription");
     currentWeatherDescription.innerHTML =  `It's a ${weatherDescription} day!`;
+
+    getCoordForecast(response.data.coord);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = ` <div class="row"> ` ;
@@ -83,5 +94,3 @@ formInput.addEventListener("submit", getCityName);
 
 navigator.geolocation.getCurrentPosition(getPosition);
 
-// despuàes veremos donde la ponemos!
-displayForecast();
