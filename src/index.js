@@ -26,6 +26,28 @@ function getTemperature(response){
     currentWeatherDescription.innerHTML =  `It's a ${weatherDescription} day!`;
 }
 
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    forecastElement.innerHTML = `
+    <div class="forecast" id="forecast">
+  <div class="row">
+    <div class= "col-2 card" >
+      <div class= "forecastDate">Fri</div>
+      <div class="forecastIcon"><img src="#" id="forecastIcon"/></div>
+      <div class="forecastTemp">
+        <span class="forecastTempMax">20°C</span>
+        <span class="forecastTempMin">10°C</span>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+    `;
+
+}
+
 function getCity(response){
     let city = response.data.name;
     let apiKey = "751305c75f9526727cdf4f36e45a4e75";
@@ -50,7 +72,11 @@ function getPosition(position){
   axios.get(apiUrl).then(getCity);
 }
 
+
 let formInput = document.querySelector("form");
 formInput.addEventListener("submit", getCityName);
 
 navigator.geolocation.getCurrentPosition(getPosition);
+
+// despuàes veremos donde la ponemos!
+displayForecast();
