@@ -29,22 +29,27 @@ function getTemperature(response){
 function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
 
-    forecastElement.innerHTML = `
-    <div class="forecast" id="forecast">
-  <div class="row">
+    let forecastHTML = ` <div class="row"> ` ;
+    let days=["Wed","Thu","Fri"];
+    days.forEach(function(day){
+forecastHTML = forecastHTML + ` 
+    
     <div class= "col-2 card" >
-      <div class= "forecastDate">Fri</div>
+      <div class= "forecastDate">${day}</div>
       <div class="forecastIcon"><img src="#" id="forecastIcon"/></div>
       <div class="forecastTemp">
         <span class="forecastTempMax">20°C</span>
         <span class="forecastTempMin">10°C</span>
       </div>
 
-    </div>
+    </div>`;
+    })
 
-  </div>
-</div>
-    `;
+    
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+
 
 }
 
