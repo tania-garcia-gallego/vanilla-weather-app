@@ -51,7 +51,7 @@ input {
 .forecastIcon {
   display: block;
   margin: auto;
-  padding: 5px;
+  width: 46px;
 }
 
 .forecast {
